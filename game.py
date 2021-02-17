@@ -4,7 +4,7 @@ from tabulate import tabulate as tab
 turn_count = 0
 game_count = 0
 input_variable = ""
-again = "y"
+replay = "y"
 winner = -1
 players_list = [1, 2]
 
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     print_table()
     print("\nEnter grid reference in the form of a letter then number e.g. b2.")
 
-    while again == "y":
+    while replay == "y":
         input_variable = "\n" + current_player.name + ", take your turn: "
         turn(current_player)
         turn_count += 1
@@ -160,13 +160,13 @@ if __name__ == "__main__":
             break
         current_player = switch_players(current_player, players_list)
 
-    again = input("\nWould you like to play again, y/n? ")
+    replay = input("\nWould you like to play again, y/n? ")
 
-    while again != ("y", "n"):
-        if again == "y":
+    while replay != ("y", "n"):
+        if replay == "y":
             print_table()
             break
-        elif again == "n":
+        elif replay == "n":
             exit()
         else:
             break
